@@ -28,7 +28,8 @@ public class PortfolioSecurityConfiguration {
 				cors.setAllowedHeaders(Arrays.asList("*"));
 				cors.setAllowedMethods(Collections.singletonList("*"));
 				cors.setAllowCredentials(true);
-				cors.setMaxAge(6000L);
+				cors.setExposedHeaders(Arrays.asList("Authorization"));
+				cors.setMaxAge(ONE_YEAR);
 				return cors;
 			}
 		}).and()
