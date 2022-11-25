@@ -25,7 +25,7 @@ public class PortfolioSecurityConfiguration {
 			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 				CorsConfiguration cors=new CorsConfiguration();
 				cors.setAllowedOriginPatterns(Collections.singletonList("*"));
-				config.setAllowedHeaders(Arrays.asList("*"));
+				cors.setAllowedHeaders(Arrays.asList("*"));
 				cors.setAllowedMethods(Collections.singletonList("*"));
 				cors.setAllowCredentials(true);
 				cors.setMaxAge(6000L);
