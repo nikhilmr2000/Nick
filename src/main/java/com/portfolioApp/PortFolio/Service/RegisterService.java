@@ -8,14 +8,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.portfolioApp.PortFolio.Entity.Acheievements;
-import com.portfolioApp.PortFolio.Entity.Authority;
+
 import com.portfolioApp.PortFolio.Entity.PortFolioDetails;
 import com.portfolioApp.PortFolio.Entity.Profile;
 import com.portfolioApp.PortFolio.Entity.Projects;
 import com.portfolioApp.PortFolio.Entity.Skills;
 import com.portfolioApp.PortFolio.Entity.Studies;
 import com.portfolioApp.PortFolio.Repository.AchievementRepository;
-import com.portfolioApp.PortFolio.Repository.AuthorityRepository;
+
 import com.portfolioApp.PortFolio.Repository.PortFolioDetailsRepository;
 import com.portfolioApp.PortFolio.Repository.ProfileRepository;
 import com.portfolioApp.PortFolio.Repository.ProjectsRepository;
@@ -25,8 +25,6 @@ import com.portfolioApp.PortFolio.Repository.StudiesRepository;
 @Service
 public class RegisterService {
 	
-	@Autowired
-	public AuthorityRepository authorityRepo;
 	
 	@Autowired 
 	public ProfileRepository profileRepo;
@@ -49,19 +47,7 @@ public class RegisterService {
 	@Autowired
 	public PortFolioDetailsRepository portRepo;
 	
-	public void saveAuthority() {
-		
-		authorityRepo.deleteAll();
-		Authority authority1=new Authority();
-		authority1.setId(1L);
-		authority1.setName("USER");
-		authorityRepo.save(authority1);
-		Authority authority2=new Authority();
-		authority2.setId(2L);
-		authority2.setName("ADMIN");
-		authorityRepo.save(authority2); 
-		
-	}
+	
 	
 	public Profile saveProfile(Profile profile) {
 		
@@ -77,7 +63,6 @@ public class RegisterService {
 			String password=profile.getPassword();
 			String hashedPassword=passwordEncoder.encode(password);
 			profile.setPassword(hashedPassword);
-			profile.setAuthority(new Authority(1,"USER"));
 			profiles=profileRepo.save(profile);
 		}
 		return profiles;
