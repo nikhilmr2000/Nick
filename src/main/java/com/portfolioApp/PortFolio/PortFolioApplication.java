@@ -17,9 +17,5 @@ public class PortFolioApplication {
 		SpringApplication.run(PortFolioApplication.class, args);
 	}
 	
-	@Bean
-	public void callService() {
-		service.saveAuthority();
-	}
 
 }
