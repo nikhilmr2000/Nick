@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.portfolioApp.PortFolio.Entity.PortFolioDetails;
 import com.portfolioApp.PortFolio.Entity.Profile;
 import com.portfolioApp.PortFolio.Repository.PortFolioDetailsRepository;
 import com.portfolioApp.PortFolio.Repository.ProfileRepository;
 import com.portfolioApp.PortFolio.Service.RegisterService;
 
+@CrossOrigin(origins="*")
 @RestController
 public class RegisterController {
 	
