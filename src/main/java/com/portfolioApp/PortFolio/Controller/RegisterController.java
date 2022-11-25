@@ -17,7 +17,7 @@ import com.portfolioApp.PortFolio.Repository.PortFolioDetailsRepository;
 import com.portfolioApp.PortFolio.Repository.ProfileRepository;
 import com.portfolioApp.PortFolio.Service.RegisterService;
 
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="https://nickfolio.herokuapp.com")
 @RestController
 public class RegisterController {
 	
