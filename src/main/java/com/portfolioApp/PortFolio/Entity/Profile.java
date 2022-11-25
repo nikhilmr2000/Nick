@@ -35,10 +35,6 @@ public class Profile {
 	@Column(name="password")
 	public String password;
 	
-	@ManyToOne
-	@JoinColumn(name="authority_id")
-	public Authority authority;
-	
 	@JsonIgnore
 	@OneToOne(mappedBy = "profile")
     private PortFolioDetails portFolios;
@@ -95,13 +91,7 @@ public class Profile {
 	}
 	
 
-	public Authority getAuthority() {
-		return authority;
-	}
-
-	public void setAuthority(Authority authority) {
-		this.authority = authority;
-	}
+	
 
 	@Override
 	public String toString() {
