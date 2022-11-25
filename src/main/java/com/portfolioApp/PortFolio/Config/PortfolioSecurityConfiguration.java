@@ -24,7 +24,7 @@ public class PortfolioSecurityConfiguration {
 			@Override
 			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 				CorsConfiguration cors=new CorsConfiguration();
-				cors.setAllowedOriginPatterns(Collections.singletonList("*"));
+				cors.setAllowedOriginPatterns(Collections.singletonList("https://nickfolio.herokuapp.com"));
 				cors.setAllowedHeaders(Arrays.asList("*"));
 				cors.setAllowedMethods(Collections.singletonList("*"));
 				cors.setAllowCredentials(true);
