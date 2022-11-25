@@ -43,7 +43,7 @@ public class PortfolioAuthenticationProvider implements AuthenticationProvider{
 		if(currentUser.getEmail()!=null) {
 			if(passwordEncoder.matches(password,currentUser.getPassword())) {
 				List<GrantedAuthority> authorities=new 	ArrayList<>();
-				authorities.add(new SimpleGrantedAuthority(currentUser.getAuthority().getName()));
+				authorities.add(new SimpleGrantedAuthority("USER"));
 				return new UsernamePasswordAuthenticationToken(email,password,authorities);
 			}
 			else {
