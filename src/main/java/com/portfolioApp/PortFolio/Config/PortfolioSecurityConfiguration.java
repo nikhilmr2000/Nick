@@ -36,8 +36,7 @@ public class PortfolioSecurityConfiguration {
 		.csrf().disable()//ignoringAntMatchers("/register","/portFolio/portfolioDetails","/portFolio/portfolioDetails/*")
 		//.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 		.authorizeHttpRequests()
-		.antMatchers("/portFolio/portfolioDetails").hasAuthority("USER")
-		.antMatchers("/portFolio","/currentUser","/getPortDetails").authenticated()
+		.antMatchers("/portFolio","/currentUser","/getPortDetails","/portFolio/portfolioDetails").authenticated()
 		.antMatchers("/register","/portFolio/portfolioDetails/*").permitAll()
 		.and().httpBasic()
 		.and().formLogin();
